@@ -1,0 +1,169 @@
+---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carattere&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>BlogSignal</title>
+  </head>
+  <body class="bg-[url(./bg.jpg)] bg-cover bg-no-repeat text-white py-2 px-16">
+    <nav class="min-h-[3rem] w-full flex justify-between items-center navbar">
+      <div>
+        <a href="#" class="text-xl">BlogSignal</a>
+      </div>
+
+      <div class="flex gap-8">
+        <a href="#" class="hover:underline underline-offset-4">Services</a>
+        <a href="#" class="hover:underline underline-offset-4">Our Work</a>
+        <a href="#" class="hover:underline underline-offset-4">About</a>
+        <button
+          class="bg-blue-700 rounded-lg px-3 hover:bg-white hover:text-blue-700"
+          >Contact Us</button
+        >
+      </div>
+    </nav>
+    <section class="flex justify-center mb-4">
+      <div>
+        <div class="overflow-hidden">
+          <h1
+            class="text-6xl mt-36 text-center font-medium tracking-tight mainHeading"
+          >
+            Make your blog <span
+              class="bg-blue-700 px-2 secondary-font text-7xl">known</span
+            >
+          </h1>
+        </div>
+
+        <div class="overflow-hidden">
+          <h1
+            class="text-6xl text-center font-medium tracking-tight mainHeading"
+          >
+            on the internet
+          </h1>
+        </div>
+
+        <div class="opacity-0 subheadingAndCta">
+          <h3 class="text-center mt-2 subHeading">
+            Want to have a blog with actual traffic? We’ll handle it for you.
+            <br />
+            Focus on getting more posts out there and leave the nitty grittys to
+            us.
+          </h3>
+
+          <div class="flex gap-4 justify-center items-center mt-6">
+            <button
+              class="bg-blue-700 py-2 px-6 rounded-xl scale-110 transition duration-150 hover:bg-white hover:text-blue-700 ctaButton"
+              >Get Started</button
+            >
+            <button
+              class="border-2 border-blue-700 py-2 px-6 rounded-xl transition duration-150 hover:bg-white hover:text-blue-700 ctaButton"
+              >Book a demo</button
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex justify-center">
+      <div class="bg-white rounded-xl py-3 mt-16 relative opacity-0 productImg">
+        <div
+          class="absolute px-4 py-1 bg-blue-700 rounded-full -top-5 -left-20"
+        >
+          +500 visitors/month
+        </div>
+        <img
+          src="./avgblog.PNG"
+          alt="application-screenshot"
+          class="h-full max-w-5xl"
+        />
+      </div>
+    </section>
+    <style>
+      :root {
+        box-sizing: border-box;
+      }
+
+      * {
+        font-family: "Karla", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+
+      .secondary-font {
+        font-family: "Carattere", cursive;
+        font-style: normal;
+      }
+    </style>
+
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+    ></script>
+
+    <script>
+      const tl = gsap.timeline();
+
+      tl.from(".mainHeading", {
+        y: 100,
+        ease: "power4.out",
+        skewY: 7,
+        stagger: {
+          amount: 0.3,
+        },
+        duration: 1.5,
+      });
+
+      tl.fromTo(
+        ".subheadingAndCta",
+        {
+          opacity: 0,
+          x: -80,
+        },
+        {
+          opacity: 1,
+          x: 0,
+        }
+      );
+
+      tl.fromTo(
+        ".navbar",
+        {
+          y: -100,
+        },
+        {
+          y: 0,
+          duration: 1.5,
+          ease: "power1.out",
+        }
+      );
+
+      tl.fromTo(
+        ".productImg",
+        {
+          opacity: 0,
+          y: 200,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+        },
+        "<"
+      );
+    </script>
+  </body>
+</html>
